@@ -1,0 +1,128 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$yellow-bg-start:rgba(241,231,103,1);
+$yellow-bg-end:rgba(255,248,166,1);
+$border-color:#000;
+$title-font: 'Oswald', sans-serif;
+
+
+@mixin yellow-gradient() {
+  background: $yellow-bg-start;
+  background: -moz-linear-gradient(left, $yellow-bg-start 0%, $yellow-bg-end 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $yellow-bg-start), color-stop(100%, $yellow-bg-end));
+  background: -webkit-linear-gradient(left, $yellow-bg-start 0%, $yellow-bg-end 100%);
+  background: -o-linear-gradient(left, $yellow-bg-start 0%, $yellow-bg-end 100%);
+  background: -ms-linear-gradient(left, $yellow-bg-start 0%, $yellow-bg-end 100%);
+  background: linear-gradient(to right, $yellow-bg-start 0%, $yellow-bg-end 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#fff8a6', GradientType=1 );
+}
+
+@mixin full-width() {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include yellow-gradient();
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid $border-color;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.title {
+  font-family: $title-font;
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.full-w {
+  @include full-width();
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid $border-color;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+  border-radius:0 !important;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+  
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
