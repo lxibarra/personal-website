@@ -46,6 +46,15 @@ body {
 .footer {
   padding-left: 15px;
   padding-right: 15px;
+   a {
+      font-size: 3em;
+      color:#000;
+      vertical-align: middle;
+    }
+    
+    a:hover {
+      color:$yellow-bg-start;
+    }
 }
 
 /* Custom page header */
@@ -102,6 +111,22 @@ body {
   }
 }
 
+.explain  p {
+  text-align: justify;
+} 
+
+.explain {
+  h1, h2, h3, h4, h5, h6 {
+     font-family: $title-font;
+  }
+  
+  h3 {
+    font-weight: 400;
+    font-size: 3em;
+  }
+}
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -112,6 +137,8 @@ body {
   .header,
   .marketing,
   .footer {
+    margin:0;
+    padding-top: 0;
     padding-left: 0;
     padding-right: 0;
   }
