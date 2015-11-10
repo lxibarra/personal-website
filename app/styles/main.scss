@@ -4,11 +4,23 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "404.scss";
+
 $yellow-bg-start:rgba(241,231,103,1);
 $yellow-bg-end:rgba(255,248,166,1);
 $border-color:#000;
 $title-font: 'Oswald', sans-serif;
 
+@mixin anydradient-gradient($bg-gr-start: #ccc, $bg-gr-end:#000) {
+  background: $bg-gr-start;
+  background: -moz-linear-gradient(top, $bg-gr-start 0%, $bg-gr-end 100%);
+  background: -webkit-gradient(top bottom, top bottom, color-stop(0%, $bg-gr-start), color-stop(100%, $bg-gr-end));
+  background: -webkit-linear-gradient(top, $bg-gr-start 0%, $bg-gr-end 100%);
+  background: -o-linear-gradient(top, $bg-gr-start 0%, $bg-gr-end 100%);
+  background: -ms-linear-gradient(top, $bg-gr-start 0%, $bg-gr-end 100%);
+  background: linear-gradient(to bottom, $bg-gr-start 0%, $bg-gr-end 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bg-gr-start', endColorstr='$bg-gr-end', GradientType=1 );
+}
 
 @mixin yellow-gradient() {
   background: $yellow-bg-start;
@@ -90,6 +102,16 @@ body {
 .container-narrow > hr {
   margin: 30px 0;
 }
+
+.import-dev {
+  width:100%;
+  height:35px;
+  background-color: #eeeeee;
+  position:fixed;
+  top:0;
+}
+
+
 
 /* Main marketing message and sign up button */
 .jumbotron {
